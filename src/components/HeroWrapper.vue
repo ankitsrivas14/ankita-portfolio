@@ -4,7 +4,7 @@
             <div class="heading">Hi, I am Ankita,</div>
             <div class="heading">a self-taught and passionate UX/UI Designer</div>
             <p>I focus on creating meaningful experiences that are functional and visually compelling. I try my best to balance the business and user goals.</p>
-            <PrimaryButton>Download Resume</PrimaryButton>
+            <PrimaryButton id="works">Download Resume</PrimaryButton>
         </div>
         <img :src="require('@/assets/images/profile-image.png')">
     </div>

@@ -2,7 +2,7 @@
     <div class="pf-navbar__main" :class="navbarScrollClass">
         <div class="pf-navbar__main-inner">
             <router-link class="pf-navbar__item" to="/">Home</router-link>
-            <router-link class="pf-navbar__item" to="/works">Works</router-link>
+            <a class="pf-navbar__item" href="#works">Works</a>
             <router-link class="pf-navbar__item" to="/illustrations">Illustrations</router-link>
             <router-link class="pf-navbar__item" to="/contact">Contact</router-link>
         </div>
