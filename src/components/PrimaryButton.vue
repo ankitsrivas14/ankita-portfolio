@@ -17,7 +17,16 @@ export default {
     font-size: 20px;
     line-height: 23px;
     color: #FFFFFF;
-    background: #608EEF;
+    background: #2158CB;
     border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(96, 142, 239, 0.2);
+    &:active{
+        transform: scale(0.98);
+        background-color: #1145B5;
+    }
+    &:hover{
+        background-color: #1145B5;
+    }
 }
 </style>

@@ -31,10 +31,10 @@ export default {
         border-radius: 6px;
         cursor: pointer;
         &:hover{
-            background-color: #D0DEFB;
+            background-color: #E9F0FF;
         }
         &.router-link-exact-active{
-            background-color: #608EEF;
+            background-color: #2158CB;
             color: #fff;
         }
     }
