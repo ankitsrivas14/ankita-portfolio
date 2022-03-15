@@ -25,6 +25,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1152px;
+    margin: 0 auto;
     .pf-hero__text-container{
         max-width: 600px;
         .heading{
