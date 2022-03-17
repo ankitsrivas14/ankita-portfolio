@@ -48,7 +48,7 @@ export default {
             font-size: 20px;
             font-weight: 500;
             text-decoration: none;
-            color: #21243D;
+            color: $black;
             padding: 16px 20px;
             border-radius: 6px;
             cursor: pointer;
