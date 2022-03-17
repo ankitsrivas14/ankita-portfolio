@@ -5,6 +5,7 @@ import store from './store'
 
 import "@/assets/css/general.scss";
 import "@/assets/css/variables.scss";
+import "@/assets/css/classes.scss";
 
 Vue.config.productionTip = false
 

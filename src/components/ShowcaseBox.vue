@@ -1,7 +1,7 @@
 <template>
     <div class="pf-showcase__main">
         <div class="pf-showcase__inner-main">
-            <div class="heading">Work</div>
+            <div class="heading m-b-50">Work</div>
             <ShowcaseItem 
                 v-for="item in showcaseData"
                 :key="item.heading"
@@ -69,12 +69,6 @@ export default {
     .pf-showcase__inner-main{
         max-width: $max-width;
         margin: 0 auto;
-        .heading{
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 140%;
-            margin-bottom: 50px;
-        }
     }
 }
 </style>

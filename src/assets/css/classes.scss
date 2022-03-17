@@ -1,0 +1,57 @@
+.heading{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 140%;
+    color: $black;
+}
+
+//Margins
+.m-b-14{
+    margin-bottom: 14px;
+}
+.m-b-20{
+    margin-bottom: 20px;
+}
+.m-b-30{
+    margin-bottom: 30px;
+}
+.m-b-50{
+    margin-bottom: 50px;
+}
+.m-b-60{
+    margin-bottom: 60px;
+}
+.m-b-70{
+    margin-bottom: 70px;
+}
+
+
+.m-r-150{
+    margin-right: 150px;
+}
+
+//Flex
+.d-flex{
+    display: flex;
+}
+.flex-direction{
+    &-column{
+        flex-direction: column;
+    }
+}
+.align-items{
+    &-center{
+        align-items: center;
+    }
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+//Gap
+.row{
+    &-gap{
+        &-150{
+            column-gap: 150px;
+        }
+    }
+}
