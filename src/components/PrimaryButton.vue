@@ -17,7 +17,7 @@ export default {
     font-size: 20px;
     line-height: 23px;
     color: #FFFFFF;
-    background: #2158CB;
+    background: $primary-dark;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(96, 142, 239, 0.2);

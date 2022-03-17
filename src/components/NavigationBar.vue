@@ -53,10 +53,10 @@ export default {
             border-radius: 6px;
             cursor: pointer;
             &:hover{
-                background-color: #E9F0FF;
+                background-color: $primary-light;
             }
             &.router-link-exact-active{
-                background-color: #2158CB;
+                background-color: $primary-dark;
                 color: #fff;
             }
         }
