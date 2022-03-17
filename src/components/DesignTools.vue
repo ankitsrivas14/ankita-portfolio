@@ -1,7 +1,7 @@
 <template>
     <div class="pf-design-tools__main">
         <div class="heading m-b-50">My go to design tools</div>
-        <div class="d-flex flex-wrap row-gap-150">
+        <div class="d-flex flex-wrap">
             <ToolItem 
                 v-for="tool in designTools" 
                 :key="tool.id"
