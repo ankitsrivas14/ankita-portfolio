@@ -18,7 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 .pf-main-wrapper{
-    // max-width: 1152px;
     background-color: #fff;
     margin: 0 auto;
 }

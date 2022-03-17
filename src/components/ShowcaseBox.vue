@@ -67,7 +67,7 @@ export default {
     background-color: rgba(233, 240, 255, 1);
     padding: 72px 100px;
     .pf-showcase__inner-main{
-        max-width: 1152px;
+        max-width: $max-width;
         margin: 0 auto;
         .heading{
             font-weight: 400;

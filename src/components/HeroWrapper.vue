@@ -6,7 +6,7 @@
             <p>I focus on creating meaningful experiences that are functional and visually compelling. I try my best to balance the business and user goals.</p>
             <PrimaryButton id="works">Download Resume</PrimaryButton>
         </div>
-        <img :src="require('@/assets/images/profile-image.png')">
+        <img :src="require('@/assets/images/profile-image.png')" width="320px">
     </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1152px;
+    max-width: $max-width;
     margin: 0 auto;
     .pf-hero__text-container{
         max-width: 600px;

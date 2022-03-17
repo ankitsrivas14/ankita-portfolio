@@ -38,7 +38,7 @@ export default {
     left: 0;
     z-index: 100;
     .pf-navbar__main-inner{
-        max-width: 1152px;
+        max-width: $max-width;
         margin: 0 auto;
         padding: 24px;
         display: flex;
