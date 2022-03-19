@@ -1,13 +1,14 @@
 <template>
     <div class="pf-showcase__main">
         <div class="pf-showcase__inner-main">
-            <div class="heading m-b-50">Work</div>
+            <div class="heading m-b-50">Works</div>
             <ShowcaseItem 
                 v-for="item in showcaseData"
                 :key="item.heading"
                 :showcaseData="item"
             />
         </div>
+        <div id="about"></div>
     </div>
 </template>
 
