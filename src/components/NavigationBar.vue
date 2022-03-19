@@ -1,16 +1,20 @@
 <template>
     <div class="pf-navbar__main" :class="navbarScrollClass">
-        <div class="pf-navbar__main-inner">
+        <div class="pf-navbar__main-inner" v-if="!isMobile()">
             <div class="pf-navbar__item" :class="{'active': isHomeActive}" @click="handleHomeClick">Home</div>
             <a class="pf-navbar__item" href="#works" :class="{'active': isWorks}">Works</a>
             <a class="pf-navbar__item" href="#about" :class="{'active': isAbout}">About</a>
             <router-link class="pf-navbar__item" to="/illustrations">Illustrations</router-link>
             <a class="pf-navbar__item" href="#contact" :class="{'active': isContact}">Contact</a>
         </div>
+        <div class="pf-navbar__main-inner" v-else>
+            <img :src="require('@/assets/icons/menu.svg')" alt="Menu" class="cursor-pointer">
+        </div>
     </div>
 </template>
 
 <script>
+import {isMobile} from '@/helper/utility.js'
 export default {
     data(){
         return {
@@ -29,6 +33,7 @@ export default {
         },
     },
     methods: {
+        isMobile,
         checkWorks(){
             const worksPosition = document.querySelector('.pf-showcase__main');
             if(worksPosition){
