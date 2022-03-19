@@ -1,10 +1,11 @@
 <template>
     <div class="pf-navbar__main" :class="navbarScrollClass">
         <div class="pf-navbar__main-inner">
-            <router-link class="pf-navbar__item" to="/">Home</router-link>
-            <a class="pf-navbar__item" href="#works">Works</a>
+            <router-link class="pf-navbar__item" :class="{'active': isHomeActive}" to="/" @click="handleHomeClick">Home</router-link>
+            <a class="pf-navbar__item" href="#works" :class="{'active': isWorks}">Works</a>
+            <a class="pf-navbar__item" href="#about" :class="{'active': isAbout}">About</a>
             <router-link class="pf-navbar__item" to="/illustrations">Illustrations</router-link>
-            <router-link class="pf-navbar__item" to="/contact">Contact</router-link>
+            <a class="pf-navbar__item" href="#">Contact</a>
         </div>
     </div>
 </template>
@@ -14,7 +15,42 @@ export default {
     data(){
         return {
             navbarScrollClass: '',
+            isWorks: false,
+            isAbout: false,
         }
+    },
+    computed: {
+        isHomeActive(){
+            if(this.$route.name === 'landing-page' && !this.isWorks && !this.isAbout){
+                return true;
+            }
+            return false;
+        },
+    },
+    methods: {
+        checkWorks(){
+            const worksPosition = document.querySelector('.pf-showcase__main');
+            if(worksPosition){
+                if((worksPosition.getBoundingClientRect().top + document.documentElement.scrollTop - 220) < window.scrollY && (worksPosition.getBoundingClientRect().bottom + document.documentElement.scrollTop - 100) > window.scrollY){
+                    return this.isWorks = true;
+                }
+                return this.isWorks = false;
+            }
+            return this.isWorks = false;
+        },
+        checkAbout(){
+            const aboutPosition = document.querySelector('.pf-about-me__main');
+            if(aboutPosition){
+                if((aboutPosition.getBoundingClientRect().top + document.documentElement.scrollTop - 100) < window.scrollY && (aboutPosition.getBoundingClientRect().bottom + document.documentElement.scrollTop - 100) > window.scrollY){
+                    return this.isAbout = true;
+                }
+                return this.isAbout = false;
+            }
+            return this.isAbout = false;
+        },
+        handleHomeClick(){
+            console.log("handleHomeClick");
+        },
     },
     created(){
         window.addEventListener('scroll', () => {
@@ -23,6 +59,10 @@ export default {
             }
             else{
                 this.navbarScrollClass = '';
+            }
+            if(this.$route.name === 'landing-page'){
+                this.checkWorks();
+                this.checkAbout();
             }
         })
     }
@@ -55,9 +95,12 @@ export default {
             &:hover{
                 background-color: $primary-light;
             }
-            &.router-link-exact-active{
-                background-color: $primary-dark;
-                color: #fff;
+        }
+        .active{
+            background-color: $primary-dark;
+            color: #fff;
+            &:hover{
+                background-color: $primary-dark !important;
             }
         }
     }
