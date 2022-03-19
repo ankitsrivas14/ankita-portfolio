@@ -12,6 +12,9 @@
 .m-b-20{
     margin-bottom: 20px;
 }
+.m-b-28{
+    margin-bottom: 28px;
+}
 .m-b-30{
     margin-bottom: 30px;
 }
@@ -26,6 +29,9 @@
 }
 
 
+.m-r-40{
+    margin-right: 40px;
+}
 .m-r-150{
     margin-right: 150px;
 }
@@ -44,6 +50,11 @@
         align-items: center;
     }
 }
+.justify-content{
+    &-center{
+        align-items: center;
+    }
+}
 .flex-wrap{
     flex-wrap: wrap;
 }
@@ -53,5 +64,12 @@
         &-150{
             column-gap: 150px;
         }
+    }
+}
+
+//Cursor
+.cursor{
+    &-pointer{
+        cursor: pointer;
     }
 }

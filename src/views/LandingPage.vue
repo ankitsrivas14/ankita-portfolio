@@ -16,7 +16,10 @@ export default {
     components: {
         HeroWrapper,
         ShowcaseBox,
-        AboutMe
+        AboutMe,
+    },
+    mounted(){
+        console.log("MOUNTED");
     }
 }
 </script>

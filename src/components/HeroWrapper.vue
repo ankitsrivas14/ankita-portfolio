@@ -1,5 +1,5 @@
 <template>
-    <div class="pf-hero__main">
+    <div class="pf-hero__main" id="home">
         <div class="pf-hero__text-container">
             <div class="heading">Hi, I am Ankita,</div>
             <div class="heading">a self-taught and passionate UX/UI Designer</div>

@@ -1,11 +1,11 @@
 <template>
     <div class="pf-navbar__main" :class="navbarScrollClass">
         <div class="pf-navbar__main-inner">
-            <router-link class="pf-navbar__item" :class="{'active': isHomeActive}" to="/" @click="handleHomeClick">Home</router-link>
+            <div class="pf-navbar__item" :class="{'active': isHomeActive}" @click="handleHomeClick">Home</div>
             <a class="pf-navbar__item" href="#works" :class="{'active': isWorks}">Works</a>
             <a class="pf-navbar__item" href="#about" :class="{'active': isAbout}">About</a>
             <router-link class="pf-navbar__item" to="/illustrations">Illustrations</router-link>
-            <a class="pf-navbar__item" href="#">Contact</a>
+            <a class="pf-navbar__item" href="#contact" :class="{'active': isContact}">Contact</a>
         </div>
     </div>
 </template>
@@ -17,11 +17,12 @@ export default {
             navbarScrollClass: '',
             isWorks: false,
             isAbout: false,
+            isContact: false,
         }
     },
     computed: {
         isHomeActive(){
-            if(this.$route.name === 'landing-page' && !this.isWorks && !this.isAbout){
+            if(this.$route.name === 'landing-page' && !this.isWorks && !this.isAbout && !this.isContact){
                 return true;
             }
             return false;
@@ -41,15 +42,28 @@ export default {
         checkAbout(){
             const aboutPosition = document.querySelector('.pf-about-me__main');
             if(aboutPosition){
-                if((aboutPosition.getBoundingClientRect().top + document.documentElement.scrollTop - 100) < window.scrollY && (aboutPosition.getBoundingClientRect().bottom + document.documentElement.scrollTop - 100) > window.scrollY){
+                if((aboutPosition.getBoundingClientRect().top + document.documentElement.scrollTop - 100) < window.scrollY && (aboutPosition.getBoundingClientRect().bottom + document.documentElement.scrollTop - 300) > window.scrollY){
                     return this.isAbout = true;
                 }
                 return this.isAbout = false;
             }
             return this.isAbout = false;
         },
+        checkContact(){
+            const contactPosition = document.querySelector('.pf-contact__main');
+            if(contactPosition){
+                if((contactPosition.getBoundingClientRect().top + document.documentElement.scrollTop - 300) < window.scrollY){
+                    return this.isContact = true;
+                }
+                return this.isContact = false;
+            }
+            return this.isContact = false;
+        },
         handleHomeClick(){
-            console.log("handleHomeClick");
+            this.$router.push({
+                path: '/#home'
+            })
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         },
     },
     created(){
@@ -61,8 +75,16 @@ export default {
                 this.navbarScrollClass = '';
             }
             if(this.$route.name === 'landing-page'){
-                this.checkWorks();
-                this.checkAbout();
+                setTimeout(() => {
+                    this.checkWorks();
+                }, 500);
+                setTimeout(() => {
+                    this.checkAbout();
+                }, 500);
+                setTimeout(() => {
+                    this.checkContact();
+                }, 500);
+                
             }
         })
     }
