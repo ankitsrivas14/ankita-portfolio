@@ -9,10 +9,10 @@
   </div>
 </template>
 <script>
-import NavigationBar from '@/components/NavigationBar.vue';
+// import NavigationBar from '@/components/NavigationBar.vue';
 export default {
   components: {
-    NavigationBar,
+    // NavigationBar,
   }
 }
 </script>
